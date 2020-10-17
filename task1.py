@@ -1,1 +1,2 @@
-text
+import numpy as np
+
