@@ -43,6 +43,6 @@ else:
     print('Матрица не является логическим квадратом')
  
 print(timeit.timeit(setup="""import numpy as np""", stmt="""np.sum(np.diagonal(np.rot90(matr)))""", number=1000, globals=globals()))
-print(timeit.timeit(setup="""import numpy as np""", stmt="""t1 = np.rot90(matr).trace()""", number=1000, globals=globals()))
-print(timeit.timeit(setup="""import numpy as np""", stmt="""t1 = matr[:,::-1].trace()""", number=1000, globals=globals()))
-print(timeit.timeit(setup="""import numpy as np""", stmt="""t1 = matr[:][::-1].trace()""", number=1000, globals=globals()))
+print(timeit.timeit(setup="""import numpy as np""", stmt="""np.rot90(matr).trace()""", number=1000, globals=globals()))
+print(timeit.timeit(setup="""import numpy as np""", stmt="""matr[:,::-1].trace()""", number=1000, globals=globals()))
+print(timeit.timeit(setup="""import numpy as np""", stmt="""matr[:][::-1].trace()""", number=1000, globals=globals()))
