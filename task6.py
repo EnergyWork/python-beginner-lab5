@@ -138,9 +138,14 @@ def method2():
             side_swith(side, right=True)
     print(matr)
 
+def save():
+    np.savetxt('.\\output-task6.txt', matr, fmt='%i', encoding='utf-8')
+
 if method == 1:
     method1()
+    save()
 elif method == 2:
     method2()
+    save()
 else:
     print('Такого метода нет')
