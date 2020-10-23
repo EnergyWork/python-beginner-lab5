@@ -15,4 +15,6 @@ arr = np.delete(arr, x[0], axis=0)
 arr = np.delete(arr, y[0], axis=1)
 print(arr)
 
-print(sorted(np.rot90(arr), key=lambda x: min(x)))
+sorted_arr = sorted(np.rot90(arr), key=lambda x: min(x), reverse=True)
+print(sorted_arr)
+print(np.rot90(sorted_arr, k=3))
