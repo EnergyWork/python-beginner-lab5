@@ -23,6 +23,9 @@ import numpy as np
 n = int(input("Введите кол-во строк: "))
 m = int(input("Введите кол-во столбцов: "))
 method = int(input("Введите способ заполнения матрицы(1, 2): "))
+if n == m == 1:
+    print('Всего один элемент\n', 1)
+    exit(0)
 
 matr = np.zeros((n, m), dtype=np.int32)
 arr = np.linspace(1, n * m, n * m, dtype=np.int32)
