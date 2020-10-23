@@ -1,4 +1,6 @@
 import numpy as np
+import colorama
+from colorama import Fore, Back, Style
 
 """
 Элемент матрицы называется локальным минимумом, 
@@ -13,7 +15,7 @@ import numpy as np
 #     np.savetxt(f, arr, delimiter=' ', fmt='%i')
 
 matr = np.loadtxt('.\\input.txt', dtype='int64', delimiter=' ')
-print(matr)
+#print(matr)
 
 def local_min(i, j, elem, left=False, right=False, top=False, bottom=False):
     if left:
@@ -53,8 +55,14 @@ def check(i, j, elem):
     else:
         return 1 if local_min(i, j, elem, left=True, right=True, top=True, bottom=True) else 0
 
+colorama.init()
 local_mins_counter = 0
 for i, row in enumerate(matr):
     for j, elem in enumerate(row):
-        local_mins_counter += 1 if check(i, j, elem) else 0
+        if check(i, j, elem):
+            local_mins_counter += 1
+            print(Fore.GREEN + str(elem), end=' ')
+        else:
+            print(Fore.RED + str(elem), end=' ')
+    print('\n')
 print(f'Количество локальных минимумов: {local_mins_counter}')

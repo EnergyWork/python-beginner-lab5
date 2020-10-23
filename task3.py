@@ -6,7 +6,7 @@ import numpy as np
 встречающихся в заданной матрице более одного раза.
 """
 
-matr = np.random.randint(-5, 5, size=(5, 5), dtype='int64')
+matr = np.random.randint(0, 15, size=(5, 5), dtype='int64')
 print(matr)
 print('Количество строк без нулей:', np.size(matr, axis=1) - np.count_nonzero(np.any(matr == 0, axis=1)))
 
